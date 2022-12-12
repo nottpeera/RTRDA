@@ -63,7 +63,7 @@
             width: 98.5vw;
             position: fixed;
             /*bottom: 0;*/
-            top: 51vw;
+            top: 51.5vw;
         }
 
         .level-2 .home-button {
@@ -111,18 +111,25 @@
                 <div style="position:absolute; top:30vw; width:11.5vw;">
                     <img src="img/main0-tx-4.png" style="width:100%" />
                 </div>
-                <div class="col-3 text-end">
-                    <img src="img/main0-btn-1.png" class="main-button" onclick="linkLevel_1(1)"/>
+                <div class="col-1"></div>
+                <div class="col-11">
+                    <div class="row">
+                        <div class="col-3 text-end">
+                            <img src="img/main0-btn-1.png" class="main-button" onclick="linkLevel_1(1)" />
+                        </div>
+                        <div class="col-3 text-center">
+                            <img src="img/main0-btn-2.png" class="main-button" onclick="linkLevel_1(2)" />
+                        </div>
+                        <div class="col-3 text-center">
+                            <img src="img/main0-btn-3.png" class="main-button" onclick="linkLevel_1(3)" />
+                        </div>
+                        <div class="col-3 text-start">
+                            <img src="img/main0-btn-4.png" class="main-button" onclick="linkLevel_1(4)" />
+                        </div>
+                    </div>
                 </div>
-                <div class="col-3 text-center">
-                   <img src="img/main0-btn-2.png" class="main-button" onclick="linkLevel_1(2)"/>
-                </div>
-                <div class="col-3 text-center">
-                   <img src="img/main0-btn-3.png" class="main-button" onclick="linkLevel_1(3)" />
-                </div>
-                <div class="col-3 text-start">
-                   <img src="img/main0-btn-4.png" class="main-button" onclick="linkLevel_1(4)" />
-                </div>
+               
+               
             </div>
         </div>
         <!--End::Main0-->
@@ -334,10 +341,8 @@
         function linkLevel_1(id) {
             $('.level-1').hide();
             $('.level-2').hide();
-
-
-            //animate__fadeInBottomLeft
-            $('#Main' + id).fadeIn(); //.addClass('animate__animated').addClass('animate__fadeInBottomLeft');
+                        
+            $('#Main' + id).fadeIn(); 
             
         }
 
