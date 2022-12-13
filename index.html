@@ -11,76 +11,40 @@
     <link href="css/bootstrap/bootstrap-utilities.css" rel="stylesheet" />
 
     <link href="css/jquery-ui-1.13.2.css" rel="stylesheet" />
+    <link href="css/particle-animate.css" rel="stylesheet">
 
     <!--custom css-->
     <link href="css/custom.css" rel="stylesheet" />
 
 
     <style type="text/css">
+
         body {
             margin: 0;
             padding: 0;
-            overflow:hidden;
+            overflow: hidden;
             background-image: url('img/bg.jpg');
-            background-size:cover;
-            background-repeat:no-repeat;
-        }
-
-        .text-right {
-            text-align:right;
-        }
-        .text-left {
-            text-align: left;
-        }
-
-        .w-10 {
-            width:10%;
-        }
-
-        .w-20 {
-            width: 20%;
-        }
-
-        .w-30 {
-            width: 30%;
-        }
-
-        .w-40 {
-            width: 40%;
-        }
-
-        .w-60 {
-            width: 60%;
-        }
-
-        .w-70 {
-            width: 70%;
-        }
-
-        .w-80 {
-            width: 80%;
-        }
-
-        .w-90 {
-            width: 90%;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
         .size-helper {
             background-color: white;
             position: fixed;
-            top:0;
-            left:0;
-            padding:5px;
+            top: 0;
+            left: 0;
+            padding: 5px;
+            display: none;
         }
 
         .top-header {
-            height:6vw;
+            height: 6vw;
         }
-               
+
         .conten-container {
-            width:96%;
-            margin-left:1.5%;
-            margin-right:1.5%;
+            width: 96%;
+            margin-left: 1.5%;
+            margin-right: 1.5%;
         }
 
         .main-button {
@@ -91,7 +55,7 @@
             width: 100%;
             position: fixed;
             /*bottom: 0;*/
-            top:53vw;
+            top: 53vw;
         }
 
         .level-1 .home-button {
@@ -111,12 +75,12 @@
         }
 
         .level-3 .carousel-item {
-            text-align:center;
+            text-align: center;
         }
 
-        .level-3 .carousel-item img {
-            width:90%;
-        }
+            .level-3 .carousel-item img {
+                width: 90%;
+            }
 
         .level-3 .bottom-navigator {
             width: 100vw;
@@ -137,20 +101,23 @@
         .level-3 .next-button {
             width: 10vw;
             margin-top: 1vw;
-            margin-right:1.5vw;
+            margin-right: 1.5vw;
         }
 
         .carousel-item img {
-            text-align:center;
+            text-align: center;
         }
-
     </style>
 
     <!--Core jQuery-->
-    <script src="js/jquery-3.6.1.min.js"></script>      
+    <script src="js/jquery-3.6.1.min.js"></script>
 
 </head>
 <body>
+
+    <div id="particle-container">     
+    </div>
+
     <div class="size-helper"></div>
 
     <div class="top-header"></div>
@@ -173,32 +140,31 @@
             </div>
             <div class="row mt-4">
                 <div style="position:absolute; top:30vw; width:11.5vw;">
-                    <img src="img/main0-tx-4.png"  class="w-100" />
+                    <img src="img/main0-tx-4.png" class="w-100" />
                 </div>
                 <div class="col-1"></div>
                 <div class="col-11">
                     <div class="row">
                         <div class="col-3 text-end">
-                            <img src="img/main0-btn-1.png" class="main-button" onclick="linkTo(1)" />
+                            <img src="img/main0-btn-1.png" class="main-button" onclick="linkTo(1,'slide','down')" />
                         </div>
                         <div class="col-3 text-center">
-                            <img src="img/main0-btn-2.png" class="main-button" onclick="linkTo(2)" />
+                            <img src="img/main0-btn-2.png" class="main-button" onclick="linkTo(2,'slide','down')" />
                         </div>
                         <div class="col-3 text-center">
-                            <img src="img/main0-btn-3.png" class="main-button" onclick="linkTo(3)" />
+                            <img src="img/main0-btn-3.png" class="main-button" onclick="linkTo(3,'slide','down')" />
                         </div>
                         <div class="col-3 text-start">
-                            <img src="img/main0-btn-4.png" class="main-button" onclick="linkTo(4)" />
+                            <img src="img/main0-btn-4.png" class="main-button" onclick="linkTo(4,'slide','down')" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!--End::Main0-->
-
         <!--Begin::Main1-->
         <div id="Main1" class="mt-3 level-1">
-            <div class="row mt-5">
+            <div class="row">
                 <div class="col-4"></div>
                 <div class="col-4 text-center">
                     <img src="img/main1-1.png" class="w-80" />
@@ -222,10 +188,9 @@
             </div>
         </div>
         <!--End::Main1-->
-        
         <!--Begin::Main2-->
         <div id="Main2" class="mt-3 level-1">
-            <div class="row mt-5">
+            <div class="row">
                 <div class="col-4"></div>
                 <div class="col-4 text-center">
                     <img src="img/main2-1.png" class="w-80" />
@@ -254,10 +219,9 @@
             </div>
         </div>
         <!--End::Main2-->
-
         <!--Begin::Main3-->
         <div id="Main3" class="mt-3 level-1">
-            <div class="row mt-5">
+            <div class="row">
                 <div class="col-4"></div>
                 <div class="col-4 text-center">
                     <img src="img/main3-1.png" class="w-80" />
@@ -276,10 +240,9 @@
             </div>
         </div>
         <!--End::Main3-->
-
         <!--Begin::Main4-->
         <div id="Main4" class="mt-3 level-1">
-            <div class="row mt-5">
+            <div class="row">
                 <div class="col-4"></div>
                 <div class="col-4 text-center">
                     <img src="img/main4-1.png" class="w-80" />
@@ -289,7 +252,7 @@
             <div class="row mt-3">
                 <div class="col-3"></div>
                 <div class="col-6 text-center">
-                    <img src="img/main4-2.png" class="w-100" onclick="linkTo(41);"/>
+                    <img src="img/main4-2.png" class="w-100" onclick="linkTo(41);" />
                 </div>
                 <div class="col-3"></div>
             </div>
@@ -298,7 +261,6 @@
             </div>
         </div>
         <!--End::Main4-->
-
         <!-------------------------------------------------Level 2------------------------------------------------>
         <!--Begin::Main11 -->
         <div id="Main11" class="mt-3 level-2">
@@ -317,12 +279,12 @@
                                 <img src="img/1-1/3.png" class="w-100" onclick="modalTo('11-Slide',2)" />
                             </div>
                             <div class="col-4 pt-5">
-                                <img src="img/1-1/4.png" class="pt-1 w-100" onclick="modalTo('11-Slide',3)"/>
+                                <img src="img/1-1/4.png" class="pt-1 w-100" onclick="modalTo('11-Slide',3)" />
                             </div>
                             <div class="col-4 pt-5">
-                                <img src="img/1-1/5.png" class="pt-1 w-100" onclick="modalTo('11-Slide',4)"/>
+                                <img src="img/1-1/5.png" class="pt-1 w-100" onclick="modalTo('11-Slide',4)" />
                             </div>
-                        </div>                       
+                        </div>
                     </div>
                 </div>
                 <div class="col-3 pt-5">
@@ -335,7 +297,6 @@
             </div>
         </div>
         <!--End::Main11 -->
-
         <!--Begin::Main12 -->
         <div id="Main12" class="mt-3 level-2">
             <div class="row">
@@ -357,7 +318,7 @@
                             <div class="col-4 pt-5">
                                 <img src="img/1-2/5.png" class="pt-1 w-100" onclick="modalTo('12-Slide',4)" />
                             </div>
-                        </div>                       
+                        </div>
                     </div>
                 </div>
                 <div class="col-3 pt-5">
@@ -370,7 +331,6 @@
             </div>
         </div>
         <!--End::Main12 -->
-
         <!--Begin::Main21 -->
         <div id="Main21" class="mt-3 level-2">
             <div class="row">
@@ -392,7 +352,7 @@
                             <div class="col-4 pt-5">
                                 <img src="img/2-1/5.png" class="pt-1 w-100" onclick="modalTo('21-Slide',4)" />
                             </div>
-                        </div>                       
+                        </div>
                     </div>
                 </div>
                 <div class="col-3 pt-5">
@@ -405,7 +365,6 @@
             </div>
         </div>
         <!--End::Main21 -->
-
         <!--Begin::Main22 -->
         <div id="Main22" class="mt-3 level-2">
             <div class="row">
@@ -427,7 +386,7 @@
                             <div class="col-4 pt-5">
                                 <img src="img/2-2/5.png" class="pt-1 w-100" onclick="modalTo('22-Slide',4)" />
                             </div>
-                        </div>                       
+                        </div>
                     </div>
                 </div>
                 <div class="col-3 pt-5">
@@ -440,7 +399,6 @@
             </div>
         </div>
         <!--End::Main22 -->
-
         <!--Begin::Main23 -->
         <div id="Main23" class="mt-3 level-2">
             <div class="row">
@@ -462,7 +420,7 @@
                             <div class="col-4 pt-5">
                                 <img src="img/2-3/5.png" class="pt-1 w-100" onclick="modalTo('23-Slide',4)" />
                             </div>
-                        </div>                       
+                        </div>
                     </div>
                 </div>
                 <div class="col-3 pt-5">
@@ -475,7 +433,6 @@
             </div>
         </div>
         <!--End::Main23 -->
-
         <!--Begin::Main31 -->
         <div id="Main31" class="level-2">
             <div class="row">
@@ -510,7 +467,6 @@
             </div>
         </div>
         <!--End::Main31 -->
-
         <!--Begin::Main41 -->
         <div id="Main41" class="level-2">
             <div class="row">
@@ -545,226 +501,218 @@
             </div>
         </div>
         <!--End::Main41 -->
-
         <!-------------------------------------------------Level 3------------------------------------------------>
-        
         <!--Begin::Main11-Slide -->
         <div id="Main11-Slide" class="carousel slide level-3" data-bs-interval="false" data-bs-touch="true">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="img/1-1_1.png"/>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/1-1_1.png" />
+                </div>
+                <div class="carousel-item">
+                    <img src="img/1-1_2.png" />
+                </div>
+                <div class="carousel-item">
+                    <img src="img/1-1_3.png" />
+                </div>
+                <div class="carousel-item">
+                    <img src="img/1-1_4.png" />
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="img/1-1_2.png"/>
-            </div>
-            <div class="carousel-item">
-                <img src="img/1-1_3.png"/>
-            </div>
-            <div class="carousel-item">
-                <img src="img/1-1_4.png"/>
-            </div>
-          </div>          
 
-          <div class="bottom-navigator row">
-              <div class="col-4 text-left pt-2">
-                  <img src="img/btn-back.png" class="back-button" data-bs-target="#Main11-Slide" data-bs-slide="prev" />
-              </div>
-              <div class="col-4 text-center">
-                  <img src="img/btn-small-blue.png" class="home-button" onclick="linkTo(11);" />
-              </div>
-              <div class="col-4 text-right pt-2">
-                  <img src="img/btn-next.png" class="next-button" data-bs-target="#Main11-Slide" data-bs-slide="next" />
-              </div>
-          </div>
+            <div class="bottom-navigator row">
+                <div class="col-4 text-left pt-2">
+                    <img src="img/btn-back.png" class="back-button" data-bs-target="#Main11-Slide" data-bs-slide="prev" />
+                </div>
+                <div class="col-4 text-center">
+                    <img src="img/btn-small-blue.png" class="home-button" onclick="linkTo(11);" />
+                </div>
+                <div class="col-4 text-right pt-2">
+                    <img src="img/btn-next.png" class="next-button" data-bs-target="#Main11-Slide" data-bs-slide="next" />
+                </div>
+            </div>
         </div>
         <!--End::Main11-Slide -->
-
         <!--Begin::Main12-Slide -->
         <div id="Main12-Slide" class="carousel slide level-3" data-bs-interval="false" data-bs-touch="true">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="img/1-2_1.png"/>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/1-2_1.png" />
+                </div>
+                <div class="carousel-item">
+                    <img src="img/1-2_2.png" />
+                </div>
+                <div class="carousel-item">
+                    <img src="img/1-2_3.png" />
+                </div>
+                <div class="carousel-item">
+                    <img src="img/1-2_4.png" />
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="img/1-2_2.png"/>
-            </div>
-            <div class="carousel-item">
-                <img src="img/1-2_3.png"/>
-            </div>
-            <div class="carousel-item">
-                <img src="img/1-2_4.png"/>
-            </div>
-          </div>          
 
-          <div class="bottom-navigator row">
-              <div class="col-4 text-left pt-2">
-                  <img src="img/btn-back.png" class="back-button" data-bs-target="#Main12-Slide" data-bs-slide="prev" />
-              </div>
-              <div class="col-4 text-center">
-                  <img src="img/btn-small-blue.png" class="home-button" onclick="linkTo(12);" />
-              </div>
-              <div class="col-4 text-right pt-2">
-                  <img src="img/btn-next.png" class="next-button" data-bs-target="#Main12-Slide" data-bs-slide="next" />
-              </div>
-          </div>
+            <div class="bottom-navigator row">
+                <div class="col-4 text-left pt-2">
+                    <img src="img/btn-back.png" class="back-button" data-bs-target="#Main12-Slide" data-bs-slide="prev" />
+                </div>
+                <div class="col-4 text-center">
+                    <img src="img/btn-small-blue.png" class="home-button" onclick="linkTo(12);" />
+                </div>
+                <div class="col-4 text-right pt-2">
+                    <img src="img/btn-next.png" class="next-button" data-bs-target="#Main12-Slide" data-bs-slide="next" />
+                </div>
+            </div>
         </div>
         <!--End::Main12-Slide -->
-
         <!--Begin::Main21-Slide -->
         <div id="Main21-Slide" class="carousel slide level-3" data-bs-interval="false" data-bs-touch="true">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="img/2-1_1.png"/>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/2-1_1.png" />
+                </div>
+                <div class="carousel-item">
+                    <img src="img/2-1_2.png" />
+                </div>
+                <div class="carousel-item">
+                    <img src="img/2-1_3.png" />
+                </div>
+                <div class="carousel-item">
+                    <img src="img/2-1_4.png" />
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="img/2-1_2.png"/>
-            </div>
-            <div class="carousel-item">
-                <img src="img/2-1_3.png"/>
-            </div>
-            <div class="carousel-item">
-                <img src="img/2-1_4.png"/>
-            </div>
-          </div>          
 
-          <div class="bottom-navigator row">
-              <div class="col-4 text-left pt-2">
-                  <img src="img/btn-back.png" class="back-button" data-bs-target="#Main21-Slide" data-bs-slide="prev" />
-              </div>
-              <div class="col-4 text-center">
-                  <img src="img/btn-small-orange.png" class="home-button" onclick="linkTo(21);" />
-              </div>
-              <div class="col-4 text-right pt-2">
-                  <img src="img/btn-next.png" class="next-button" data-bs-target="#Main21-Slide" data-bs-slide="next" />
-              </div>
-          </div>
+            <div class="bottom-navigator row">
+                <div class="col-4 text-left pt-2">
+                    <img src="img/btn-back.png" class="back-button" data-bs-target="#Main21-Slide" data-bs-slide="prev" />
+                </div>
+                <div class="col-4 text-center">
+                    <img src="img/btn-small-orange.png" class="home-button" onclick="linkTo(21);" />
+                </div>
+                <div class="col-4 text-right pt-2">
+                    <img src="img/btn-next.png" class="next-button" data-bs-target="#Main21-Slide" data-bs-slide="next" />
+                </div>
+            </div>
         </div>
         <!--End::Main21-Slide -->
-
         <!--Begin::Main22-Slide -->
         <div id="Main22-Slide" class="carousel slide level-3" data-bs-interval="false" data-bs-touch="true">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="img/2-2_1.png"/>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/2-2_1.png" />
+                </div>
+                <div class="carousel-item">
+                    <img src="img/2-2_2.png" />
+                </div>
+                <div class="carousel-item">
+                    <img src="img/2-2_3.png" />
+                </div>
+                <div class="carousel-item">
+                    <img src="img/2-2_4.png" />
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="img/2-2_2.png"/>
-            </div>
-            <div class="carousel-item">
-                <img src="img/2-2_3.png"/>
-            </div>
-            <div class="carousel-item">
-                <img src="img/2-2_4.png"/>
-            </div>
-          </div>          
 
-          <div class="bottom-navigator row">
-              <div class="col-4 text-left pt-2">
-                  <img src="img/btn-back.png" class="back-button" data-bs-target="#Main22-Slide" data-bs-slide="prev" />
-              </div>
-              <div class="col-4 text-center">
-                  <img src="img/btn-small-orange.png" class="home-button" onclick="linkTo(22);" />
-              </div>
-              <div class="col-4 text-right pt-2">
-                  <img src="img/btn-next.png" class="next-button" data-bs-target="#Main22-Slide" data-bs-slide="next" />
-              </div>
-          </div>
+            <div class="bottom-navigator row">
+                <div class="col-4 text-left pt-2">
+                    <img src="img/btn-back.png" class="back-button" data-bs-target="#Main22-Slide" data-bs-slide="prev" />
+                </div>
+                <div class="col-4 text-center">
+                    <img src="img/btn-small-orange.png" class="home-button" onclick="linkTo(22);" />
+                </div>
+                <div class="col-4 text-right pt-2">
+                    <img src="img/btn-next.png" class="next-button" data-bs-target="#Main22-Slide" data-bs-slide="next" />
+                </div>
+            </div>
         </div>
         <!--End::Main22-Slide -->
-
         <!--Begin::Main23-Slide -->
         <div id="Main23-Slide" class="carousel slide level-3" data-bs-interval="false" data-bs-touch="true">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="img/2-3_1.png"/>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/2-3_1.png" />
+                </div>
+                <div class="carousel-item">
+                    <img src="img/2-3_2.png" />
+                </div>
+                <div class="carousel-item">
+                    <img src="img/2-3_3.png" />
+                </div>
+                <div class="carousel-item">
+                    <img src="img/2-3_4.png" />
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="img/2-3_2.png"/>
-            </div>
-            <div class="carousel-item">
-                <img src="img/2-3_3.png"/>
-            </div>
-            <div class="carousel-item">
-                <img src="img/2-3_4.png"/>
-            </div>
-          </div>          
 
-          <div class="bottom-navigator row">
-              <div class="col-4 text-left pt-2">
-                  <img src="img/btn-back.png" class="back-button" data-bs-target="#Main23-Slide" data-bs-slide="prev" />
-              </div>
-              <div class="col-4 text-center">
-                  <img src="img/btn-small-orange.png" class="home-button" onclick="linkTo(23);" />
-              </div>
-              <div class="col-4 text-right pt-2">
-                  <img src="img/btn-next.png" class="next-button" data-bs-target="#Main23-Slide" data-bs-slide="next" />
-              </div>
-          </div>
+            <div class="bottom-navigator row">
+                <div class="col-4 text-left pt-2">
+                    <img src="img/btn-back.png" class="back-button" data-bs-target="#Main23-Slide" data-bs-slide="prev" />
+                </div>
+                <div class="col-4 text-center">
+                    <img src="img/btn-small-orange.png" class="home-button" onclick="linkTo(23);" />
+                </div>
+                <div class="col-4 text-right pt-2">
+                    <img src="img/btn-next.png" class="next-button" data-bs-target="#Main23-Slide" data-bs-slide="next" />
+                </div>
+            </div>
         </div>
         <!--End::Main23-Slide -->
-
         <!--Begin::Main31-Slide -->
         <div id="Main31-Slide" class="carousel slide level-3" data-bs-interval="false" data-bs-touch="true">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="img/3-1_1.png"/>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/3-1_1.png" />
+                </div>
+                <div class="carousel-item">
+                    <img src="img/3-1_2.png" />
+                </div>
+                <div class="carousel-item">
+                    <img src="img/3-1_3.png" />
+                </div>
+                <div class="carousel-item">
+                    <img src="img/3-1_4.png" />
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="img/3-1_2.png"/>
-            </div>
-            <div class="carousel-item">
-                <img src="img/3-1_3.png"/>
-            </div>
-            <div class="carousel-item">
-                <img src="img/3-1_4.png"/>
-            </div>
-          </div>          
 
-          <div class="bottom-navigator row">
-              <div class="col-4 text-left pt-2">
-                  <img src="img/btn-back.png" class="back-button" data-bs-target="#Main31-Slide" data-bs-slide="prev" />
-              </div>
-              <div class="col-4 text-center">
-                  <img src="img/btn-small-gray.png" class="home-button" onclick="linkTo(31);" />
-              </div>
-              <div class="col-4 text-right pt-2">
-                  <img src="img/btn-next.png" class="next-button" data-bs-target="#Main31-Slide" data-bs-slide="next" />
-              </div>
-          </div>
+            <div class="bottom-navigator row">
+                <div class="col-4 text-left pt-2">
+                    <img src="img/btn-back.png" class="back-button" data-bs-target="#Main31-Slide" data-bs-slide="prev" />
+                </div>
+                <div class="col-4 text-center">
+                    <img src="img/btn-small-gray.png" class="home-button" onclick="linkTo(31);" />
+                </div>
+                <div class="col-4 text-right pt-2">
+                    <img src="img/btn-next.png" class="next-button" data-bs-target="#Main31-Slide" data-bs-slide="next" />
+                </div>
+            </div>
         </div>
         <!--End::Main31-Slide -->
-
         <!--Begin::Main41-Slide -->
         <div id="Main41-Slide" class="carousel slide level-3" data-bs-interval="false" data-bs-touch="true">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="img/4-1_1.png"/>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/4-1_1.png" />
+                </div>
+                <div class="carousel-item">
+                    <img src="img/4-1_2.png" />
+                </div>
+                <div class="carousel-item">
+                    <img src="img/4-1_3.png" />
+                </div>
+                <div class="carousel-item">
+                    <img src="img/4-1_4.png" />
+                </div>
+                <div class="carousel-item">
+                    <img src="img/4-1_5.png" />
+                </div>
             </div>
-            <div class="carousel-item">
-                <img src="img/4-1_2.png"/>
-            </div>
-            <div class="carousel-item">
-                <img src="img/4-1_3.png"/>
-            </div>
-            <div class="carousel-item">
-                <img src="img/4-1_4.png"/>
-            </div>
-               <div class="carousel-item">
-                <img src="img/4-1_5.png"/>
-            </div>
-          </div>          
 
-          <div class="bottom-navigator row">
-              <div class="col-4 text-left pt-2">
-                  <img src="img/btn-back.png" class="back-button" data-bs-target="#Main41-Slide" data-bs-slide="prev" />
-              </div>
-              <div class="col-4 text-center">
-                  <img src="img/btn-small-yellow.png" class="home-button" onclick="linkTo(41);" />
-              </div>
-              <div class="col-4 text-right pt-2">
-                  <img src="img/btn-next.png" class="next-button" data-bs-target="#Main41-Slide" data-bs-slide="next" />
-              </div>
-          </div>
+            <div class="bottom-navigator row">
+                <div class="col-4 text-left pt-2">
+                    <img src="img/btn-back.png" class="back-button" data-bs-target="#Main41-Slide" data-bs-slide="prev" />
+                </div>
+                <div class="col-4 text-center">
+                    <img src="img/btn-small-yellow.png" class="home-button" onclick="linkTo(41);" />
+                </div>
+                <div class="col-4 text-right pt-2">
+                    <img src="img/btn-next.png" class="next-button" data-bs-target="#Main41-Slide" data-bs-slide="next" />
+                </div>
+            </div>
         </div>
         <!--End::Main41-Slide -->
 
@@ -783,25 +731,54 @@
 
     <script>
 
-        function linkTo(id) {
-            $('.level-1').hide();
-            $('.level-2').hide();  
-            $('.level-3').hide();  
+        function linkTo(id, effect = 'fade', direction = '') {
 
-            $('#Main' + id).toggle("fade");
+            $('.level-1').hide();
+            $('.level-2').hide();
+            $('.level-3').hide();
+
+            var target = $('#Main' + id);
+
+            effect = effect.toLowerCase();
+
+            switch (effect) {
+                case 'shake':
+                case 'bounce':
+                case 'blind':
+                case 'clip':
+                case 'drop':
+                case 'fold':
+                case 'puff':
+                case 'pulsate':
+                case 'slide':
+                case 'explode':
+                    target.effect({
+                        effect: effect,
+                        direction: direction
+                    });
+                    break;
+                case 'fade':
+                case 'size':
+                case 'scale':
+                    target.toggle(effect);
+                    break;
+            }
+
         }
 
         $(document).ready(function () {
+            //preloadSlide();
+            setParticle();
             reportSize();
-            linkTo(0);            
+            linkTo(0);
         });
 
         function modalTo(id, slide) {
 
             $('.level-1').hide();
             $('.level-2').hide();
-            $('.level-3').hide();  
-            
+            $('.level-3').hide();
+
             var target = $('#Main' + id);
             // Set active focus slide
             var items = target.find('.carousel-item').removeClass('active');
@@ -816,23 +793,158 @@
             //    effect: "slide",
             //    direction : 'down', /*เปลี่ยนทิศทางได้*/
             //    duration: 1000
-            //});  
+            //});
             /*--------------scale----------------*/
-            target.toggle("scale");  
+            target.toggle("scale");
             /*--------------Fade----------------*/
-            //target.toggle("fade");  
+            //target.toggle("fade");
             //target.effect({
             //    effect: "clip",
             //    duration: 2000
-            //});  
+            //});
             //target.effect({
             //    effect: "explode",
             //    easing: "easeInExpo",
             //    pieces: 16,
             //    duration: 1000
-            //});  
+            //});
         }
 
+        function preloadSlide() {
+
+            var files = [
+                "assets/Img/1-1_1.png",
+                "assets/Img/1-1_2.png",
+                "assets/Img/1-1_3.png",
+                "assets/Img/1-1_4.png",
+                "assets/Img/1-2_1.png",
+                "assets/Img/1-2_2.png",
+                "assets/Img/1-2_3.png",
+                "assets/Img/1-2_4.png",
+                "assets/Img/1_1.png",
+                "assets/Img/1_2.png",
+                "assets/Img/1_btn1.png",
+                "assets/Img/1_btn2.png",
+                "assets/Img/2-1_1.png",
+                "assets/Img/2-1_2.png",
+                "assets/Img/2-1_3.png",
+                "assets/Img/2-1_4.png",
+                "assets/Img/2-2_1.png",
+                "assets/Img/2-2_2.png",
+                "assets/Img/2-2_3.png",
+                "assets/Img/2-2_4.png",
+                "assets/Img/2-3_1.png",
+                "assets/Img/2-3_2.png",
+                "assets/Img/2-3_3.png",
+                "assets/Img/2-3_4.png",
+                "assets/Img/2_1.png",
+                "assets/Img/2_2.png",
+                "assets/Img/2_3.png",
+                "assets/Img/2_btn1.png",
+                "assets/Img/2_btn2.png",
+                "assets/Img/2_btn3.png",
+                "assets/Img/3-1_1.png",
+                "assets/Img/3-1_2.png",
+                "assets/Img/3-1_3.png",
+                "assets/Img/3-1_4.png",
+                "assets/Img/3_1.png",
+                "assets/Img/3_btn1.png",
+                "assets/Img/4-1_1.png",
+                "assets/Img/4-1_2.png",
+                "assets/Img/4-1_3.png",
+                "assets/Img/4-1_4.png",
+                "assets/Img/4-1_5.png",
+                "assets/Img/4_1.png",
+                "assets/Img/4_btn1.png",
+                "assets/Img/bg.jpg",
+                "assets/Img/btn-back.png",
+                "assets/Img/btn-home.png",
+                "assets/Img/btn-next.png",
+                "assets/Img/btn-small-blue.png",
+                "assets/Img/btn-small-gray.png",
+                "assets/Img/btn-small-orange.png",
+                "assets/Img/btn-small-yellow.png",
+                "assets/Img/button--.png",
+                "assets/Img/button.png",
+                "assets/Img/main0-btn-1.png",
+                "assets/Img/main0-btn-2.png",
+                "assets/Img/main0-btn-3.png",
+                "assets/Img/main0-btn-4.png",
+                "assets/Img/main0-tx-1.png",
+                "assets/Img/main0-tx-2.png",
+                "assets/Img/main0-tx-3.png",
+                "assets/Img/main0-tx-4.png",
+                "assets/Img/main1-1.png",
+                "assets/Img/main1-2.png",
+                "assets/Img/main2-1.png",
+                "assets/Img/main2-2.png",
+                "assets/Img/main3-1.png",
+                "assets/Img/main3-2.png",
+                "assets/Img/main4-1.png",
+                "assets/Img/main4-2.png",
+                "assets/Img/1-1/1.png",
+                "assets/Img/1-1/2.png",
+                "assets/Img/1-1/3.png",
+                "assets/Img/1-1/4.png",
+                "assets/Img/1-1/5.png",
+                "assets/Img/1-1/6.png",
+                "assets/Img/1-2/1.png",
+                "assets/Img/1-2/2.png",
+                "assets/Img/1-2/3.png",
+                "assets/Img/1-2/4.png",
+                "assets/Img/1-2/5.png",
+                "assets/Img/1-2/6.png",
+                "assets/Img/2-1/1.png",
+                "assets/Img/2-1/2.png",
+                "assets/Img/2-1/3.png",
+                "assets/Img/2-1/4.png",
+                "assets/Img/2-1/5.png",
+                "assets/Img/2-1/6.png",
+                "assets/Img/2-2/1.png",
+                "assets/Img/2-2/2.png",
+                "assets/Img/2-2/3.png",
+                "assets/Img/2-2/4.png",
+                "assets/Img/2-2/5.png",
+                "assets/Img/2-2/6.png",
+                "assets/Img/2-3/1.png",
+                "assets/Img/2-3/2.png",
+                "assets/Img/2-3/3.png",
+                "assets/Img/2-3/4.png",
+                "assets/Img/2-3/5.png",
+                "assets/Img/2-3/6.png",
+                "assets/Img/3-1/1.png",
+                "assets/Img/3-1/2.png",
+                "assets/Img/3-1/3.png",
+                "assets/Img/3-1/4.png",
+                "assets/Img/3-1/5.png",
+                "assets/Img/3-1/6.png",
+                "assets/Img/4-1/1.png",
+                "assets/Img/4-1/2.png",
+                "assets/Img/4-1/3.png",
+                "assets/Img/4-1/4.png",
+                "assets/Img/4-1/5.png",
+                "assets/Img/4-1/6.png",
+            ];
+
+            for (var i = 0; i < files.length; i++) {
+                var url = files[i];
+                var img = new Image();
+                img.src = url;
+                alert(url);
+            }
+        }
+
+        function setParticle() {
+
+            $('#particle-container').empty();
+            var html = '<div class="circle-container">';
+            html += '<div class="circle" ></div>';
+            html += '</div>';
+
+            for (var i = 0; i < 500; i++) {
+                $('#particle-container').append(html);
+            }
+        }
 
     </script>
 
