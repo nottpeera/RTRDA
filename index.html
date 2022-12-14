@@ -731,6 +731,38 @@
 
     <script>
 
+        $(document).ready(function () {
+            //preloadSlide();
+            setParticle();
+            reportSize();
+            linkTo(0);
+
+            //Carousel Navigator Handler
+            $('.carousel').on('slide.bs.carousel', function (e) {
+                var id = e.target.id;
+                var slide = e.to;
+                handleCarouselNavigator('#' + id, slide);
+            });
+
+            // Redirect To Main 3 Minutes
+            var free = 0;
+            var interval = 5; // เชคทุก 5 second
+            var timeOut = 180; // ทิ้งว่างไว้ 180 Second
+            setInterval(function () {
+                free += interval;
+                if (free >= timeOut) {
+                    if ($('#Main0').css('display') == 'none') {
+                        linkTo(0);
+                        free = 0;
+                    }
+                }
+            }, interval * 1000);
+            $(document).click(function () {
+                free = 0;
+            });
+
+        });
+
         function linkTo(id, effect = 'fade', direction = '') {
 
             $('.level-1').hide();
@@ -763,22 +795,8 @@
                     target.toggle(effect);
                     break;
             }
-
         }
-
-        $(document).ready(function () {
-            //preloadSlide();
-            setParticle();
-            reportSize();
-            linkTo(0);
-
-            //Carousel Navigator Handler
-            $('.carousel').on('slide.bs.carousel', function (e) {
-                var id = e.target.id;
-                var slide = e.to;
-                handleCarouselNavigator('#' + id, slide);
-            });
-        });
+                
 
         function modalTo(id, slide) {
 
@@ -972,6 +990,8 @@
                 $('#particle-container').append(html);
             }
         }
+
+        
 
     </script>
 
