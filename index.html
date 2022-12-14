@@ -771,6 +771,13 @@
             setParticle();
             reportSize();
             linkTo(0);
+
+            //Carousel Navigator Handler
+            $('.carousel').on('slide.bs.carousel', function (e) {
+                var id = e.target.id;
+                var slide = e.to;
+                handleCarouselNavigator('#' + id, slide);
+            });
         });
 
         function modalTo(id, slide) {
@@ -808,6 +815,26 @@
             //    pieces: 16,
             //    duration: 1000
             //});
+
+            handleCarouselNavigator('#Main' + id, slide - 1);            
+        }
+
+        function handleCarouselNavigator(selector, slide) {
+            var div = $(selector);
+            var count = div.find('.carousel-inner div').length;
+            var back = div.find('.back-button');
+            var next = div.find('.next-button');
+
+            if (slide == 0)
+                back.hide();
+            else
+                back.show();
+
+            if (slide == count - 1)
+                next.hide();
+            else
+                next.show();
+
         }
 
         function preloadSlide() {
